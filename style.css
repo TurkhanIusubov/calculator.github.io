@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    -webkit-font-smoothing: antialiased; 
+    user-select: none;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgb(59, 59, 230), rgb(255, 47, 47));
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.span-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    bottom: -150px;
+    z-index: -1;
+}
+.span-container span{
+    width: 100px;
+    height: 100px;
+    background: rgb(255, 255, 255, 0.08);
+    animation: move 10s linear infinite;
+    backdrop-filter: blur(5px);
+    position: relative;
+    overflow: hidden;
+}
+@keyframes move {
+    100%{
+        transform: translateY(-120vh);
+    }
+}
+.span-container span.one{
+    animation-duration: 6s;
+    transform: scale(.4);
+}
+.span-container span.two{
+    animation-duration: 5.3s;
+    transform: scale(2.1);
+}
+.span-container span.three{
+    animation-duration: 7s;
+    transform: scale(2);
+}
+.span-container span.four{
+    animation-duration: 8s;
+    transform: scale(.1);
+}
+.span-container span.five{
+    animation-duration: 9s;
+    transform: scale(2.2);
+}
+.span-container span.six{
+    animation-duration: 5s;
+    transform: scale(.2);
+}
+.span-container span::before{
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 150px;
+    background: rgb(255,255,255, 0.18);
+    transform: skew(50deg);
+    animation: mirror 6s ease infinite;
+    left: 100px;
+    bottom: 100px;
+}
+@keyframes mirror {
+    100%{
+        left: -100px;
+        bottom:-100px
+    }
+}
+.span-container span.one::before{
+    animation-duration: 2.2s;
+}
+.span-container span.two::before{
+    animation-duration: 2.9s;
+}
+.span-container span.three::before{
+    animation-duration: 3.3s;
+}
+.span-container span.four::before{
+    animation-duration: 2.3s;
+}
+.span-container span.five::before{
+    animation-duration: 2.5s;
+}
+.span-container span.six::before{
+    animation-duration: 2s;
+}
+.container{
+    z-index: 3;
+    width: 80%;
+    max-width: 330px;
+    min-height: 450px;
+    background: rgb(255,255,255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 20px 30px rgb(0, 0, 0, 0.2);
+    border-top:1px solid rgb(255, 255, 255, 0.3) ;
+    border-left:1px solid rgb(255, 255, 255, 0.3) ;
+    
+}
+.container .text{
+    width: 100%;
+    min-height: 90px;
+    margin-bottom: 20px;
+    text-align: right;
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0 20px;
+    color: rgb(255, 255, 255);
+    user-select: text;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.rows{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 50px);
+    gap: 10px;
+}
+.rows .equal{
+    grid-column: span 2;
+    border: 1px solid rgb(255, 255, 255, 0.2);
+}
+.rows button{
+    background: transparent;
+    font-size: 1.7rem;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    transition: all .3s;
+    cursor: pointer;
+}
+.fa-solid{
+    font-size: 23px;
+}
+.rows button:hover{
+    background: rgb(255,255,255, .2);
+}
